@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Coming in Thirds
 author: Serdante Serdontino
 description: "Already got tired of typing everything with this keyboard"

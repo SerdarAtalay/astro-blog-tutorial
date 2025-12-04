@@ -1,17 +1,14 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My First Blog Post'
 pubDate: 2025-11-07
 description: 'This is the first post of my new Astro blog.'
 author: 'Serdo McSerdonald'
 image: 
-    url: 'https://docs.astro.build/rose.webp'
+    url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public", "Feynman"]
 ---
-# My first Blog post
-
-Published on: 2025-11-07
-
 Welcome to my _new blog_ about learning Astro. Here, I will share my learning journey as I build a new website.
 
 ## Steps so far:

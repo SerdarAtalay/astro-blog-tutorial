@@ -1,16 +1,16 @@
 ---
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "All about me, myself and I";
 
 const identity = {
-    firstName: "Serd",
-    country: "Turkiye",
-    occupation: "<div> centralizer",
-    hobbies: ["conspiracy theories", "sleeping", "starving myself"],
-    food: "beets",
-    animal: "bear",
-    series: "Battlestar Galactica",
+  firstName: "Serd",
+  country: "Turkiye",
+  occupation: "<div> centralizer",
+  hobbies: ["conspiracy theories", "sleeping", "starving myself"],
+  food: "beets",
+  animal: "bear",
+  series: "Battlestar Galactica",
 };
 
 const skills = ["none", "nada", "nil", null];
@@ -24,55 +24,66 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width-device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-            .skill{
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-    </head>
-    <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-
-        <h1>{pageTitle}</h1>
-        <h2>Also, why is Houston?</h2>
-
-        <p>My aim is to totally ignore AI autocomplete in this tutorial and progress slowly but confidently.</p>
-
-        <p>Also as a side goal, no copy-paste is allowed. I want to type every character myself, except from auto-closing tags.</p>
-
-        <p>Maybe we can learn something or two about this "Houston" along the way too, who knows?</p>
     
+  <BaseLayout pageTitle={pageTitle}>
+    <style is:global define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+    <h2>Also, why is Houston?</h2>
+
+    <p>
+      My aim is to totally ignore AI autocomplete in this tutorial and progress
+      slowly but confidently.
+    </p>
+
+    <p>
+      Also as a side goal, no copy-paste is allowed. I want to type every
+      character myself, except from auto-closing tags.
+    </p>
+
+    <p>
+      Maybe we can learn something or two about this "Houston" along the way
+      too, who knows?
+    </p>
+
     <i>Below this point is just mambo jambo.</i>
 
     <p>Some facts:</p>
     <ul>
-        <li>My name is {identity.firstName}. I love eating {identity.food}.</li>
-        <li>I live in {identity.country} where we have some {identity.animal}s. I work as a {identity.occupation} and never watched {identity.series}.</li>
-        {identity.hobbies.length >= 2 && 
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>}
+      <li>My name is {identity.firstName}. I love eating {identity.food}.</li>
+      <li>
+        I live in {identity.country} where we have some {identity.animal}s. I
+        work as a {identity.occupation} and never watched {identity.series}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
     </ul>
     <p>My skills are:</p>
     <ul>
-        {skills.map((skill)=><li class="skill">{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>I enjoy learning this stuff.</p>}
     {finished && <p>I finished this stuff.</p>}
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is {goal} days.</p>}
-    </body>
-</html>
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is {goal} days.</p>
+      )
+    }
+    </BaseLayout>

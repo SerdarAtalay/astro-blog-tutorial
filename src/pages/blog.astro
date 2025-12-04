@@ -1,23 +1,10 @@
 ---
-import '../styles/global.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Blog";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width-device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">{pageTitle}</a>
-
-        <h1>07.11.2025</h1>
+<BaseLayout pageTitle={pageTitle}>
+    <h1>07.11.2025</h1>
         <p>This project is all about taking it slow. I examine nearly every suggestion and its description given by the IDE as I type.</p>
         <p>I guess this seems so naive, even childish from outside. But the thing is, we are also jealous of children who can learn much faster and adapt to things that we can't even comprehend.</p>
         <p>But we can copy their approach. Not relying on experience and not being afraid to seem foolish, we can learn any concept deeply with a curious attitude towards everything that catch our attention.</p>
@@ -30,5 +17,4 @@ const pageTitle = "Blog";
         
         <p>Found a markdown cheat sheet, which is the only thing I copy and pasted in this project:</p>
         <a href="/posts/md-cheat-sheet/">Here, take a look.</a>
-    </body>
-</html>
+</BaseLayout>
