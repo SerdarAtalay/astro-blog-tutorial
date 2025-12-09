@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: The Second Blog Post
 author: Serdy Handy
 description: "Second blog post, because everyone needs repetition to practice."

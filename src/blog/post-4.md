@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Markdown Cheat Sheet
 author: Astro Learner
 description: "This post will show up on its own!"
