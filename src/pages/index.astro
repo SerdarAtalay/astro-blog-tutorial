@@ -1,13 +1,55 @@
 ---
-import Greeting from '../components/Greeting';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from "../components/Greeting";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>
-		My awesome blog subtitle
-	</h2>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-
+  <h2>My awesome blog subtitle</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <section id="sosyalmedya" class="more-features section">
+    <div class="container">
+      <div class="row justify-content-around gy-4">
+        <div
+          class="col-lg-12 d-flex flex-column justify-content-center order-2 order-lg-1"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3>
+            Instagram <a href="http://instagram.com/akakcecom" target="_blank"
+              >@akakcecom</a>
+          </h3>
+          <p>
+            <div class="igwrapper">
+              <style>
+                .igwrapper {
+                  background: #fff;
+                  position: relative;
+                }
+                .igwrapper iframe {
+                  border: 0;
+                  position: relative;
+                  z-index: 2;
+                }
+                .igwrapper a {
+                  color: rgba(0, 0, 0, 0);
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  z-index: 0;
+                }
+              </style><script async src="https://www.instagram.com/embed.js"
+              ></script><blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/akakcecom/"
+                data-instgrm-version="14"
+                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:1200px; min-width:326px; padding:0; width:99.375%;width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
+              >
+              </blockquote>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
